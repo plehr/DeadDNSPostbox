@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.plehr</groupId>
+	<artifactId>deaddnspostbox</artifactId>
+	<packaging>jar</packaging>
+	<version>0.1</version>
+	<name>DeadDNSPostbox</name>
+	<url>https://plehr.de</url>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.github.sps.pushover.net/pushover-client -->
+<dependency>
+    <groupId>com.github.sps.pushover.net</groupId>
+    <artifactId>pushover-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<finalName>uber-${artifactId}-${version}</finalName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<organization>
+		<name>PLehr.de</name>
+		<url>https://plehr.de</url>
+	</organization>
+</project>
